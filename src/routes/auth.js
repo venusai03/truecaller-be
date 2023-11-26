@@ -2,7 +2,7 @@ const express = require('express');
 let { REQUEST_ID, ACCESS_TOKEN, ENDPOINT, STATUS } = require("../../values");
 const router = express.Router();
 
-router.post('/', (req, res, next) => {
+router.post('/', (req, res) => {
     const requestId = req.requestId;
     const accessToken = req.accessToken;
     const endpoint = req.endpoint;
@@ -14,8 +14,6 @@ router.post('/', (req, res, next) => {
     ACCESS_TOKEN = accessToken;
     ENDPOINT = endpoint;
     STATUS = status;
-
-    next();
 })
 
 module.exports = router;

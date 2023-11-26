@@ -19,6 +19,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/callback', authRouter);
+app.use('/', (req, res) => {
+    res.send("<h1>Hi</h1>");
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
